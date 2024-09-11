@@ -1,19 +1,19 @@
-import React from 'react';
-import { GoogleLogin } from '@react-oauth/google';
-import { useAuth } from '../context/AuthContext';
+import React from "react";
+import { GoogleLogin } from "@react-oauth/google";
+import { useAuth } from "../context/AuthContext";
 
 const Login: React.FC = () => {
   const { login } = useAuth();
 
   return (
-    <div className="login-page">
-      <h2>Login</h2>
+    <div>
+      <h1>Login</h1>
       <GoogleLogin
-        onSuccess={credentialResponse => {
+        onSuccess={(response) => {
           login();
         }}
         onError={() => {
-          console.log('Erro de login');
+          console.log("Login Failed");
         }}
       />
     </div>
